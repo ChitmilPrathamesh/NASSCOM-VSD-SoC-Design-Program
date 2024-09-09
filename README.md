@@ -1,3 +1,4 @@
 # Digital VLSI SoC Design and Planning
 
-<img src ="https://github.com/user-attachments/assets/90b08669-9c17-4928-8cc0-5d509965f7ea">
+![Screenshot 2024-09-09 092240](https://github.com/user-attachments/assets/c1a7544e-f786-4548-9364-063914c27cad)
+
