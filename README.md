@@ -9,6 +9,6 @@
    ```blash
    cd Desktop/work/tools/oplane_working_dir/openlane
 ```
-![cd](https://github.com/user-attachments/assets/ce402973-1dfe-4a5a-8e13-45e3d749943f)
-3. 
+3. ![Screenshot 2024-09-09 092240](https://github.com/user-attachments/assets/3d4aa8b2-6cdf-48f5-ba11-11c166c4942f)
+
 
