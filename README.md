@@ -1,6 +1,5 @@
-# NASSCOM_VSD 
+# NASSCOM_VSD (Digital VLSI SoC Design and Planning)
 ![WhatsApp Image 2024-09-16 at 1 29 52 AM](https://github.com/user-attachments/assets/55ebd9bc-857a-4509-8a5d-1c54aa5cfbfd)
-# Digital VLSI SoC Design and Planning
 
 # LAB-1
 
