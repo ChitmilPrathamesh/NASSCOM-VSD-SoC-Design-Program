@@ -169,6 +169,9 @@ ext2spice
 3. #### Measure unit distance in layout grid
 ![11](https://github.com/user-attachments/assets/8254636a-bc06-47e5-a401-b1a207ae86e5)
 
-4. #### ngspice simulation
+4. #### Simulat & Download ngspice
 ![13](https://github.com/user-attachments/assets/1e226fe7-55c4-4cd7-b2ae-cef60f2eb9a2)
+![ngpsice1](https://github.com/user-attachments/assets/30f590ed-27ff-45e7-bb58-d018baadc907)
+![ngspice2](https://github.com/user-attachments/assets/d68969b2-ba73-4fa4-b4fe-037200f62a24)
+
 
