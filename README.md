@@ -1,8 +1,10 @@
+---
 # NASSCOM_VSD (Digital VLSI SoC Design and Planning)
 ![WhatsApp Image 2024-09-16 at 1 29 52 AM](https://github.com/user-attachments/assets/55ebd9bc-857a-4509-8a5d-1c54aa5cfbfd)
-
-# LAB-1
-
+---
+---
+# #LAB-1
+---
 ## 1] Run 'picorv32a' design synthesis using OpenLANE flow.
 
 ### Steps for Implementation
@@ -57,8 +59,9 @@ Percentage\ of\ DFF's = Flop\ Ratio * 100
 ```math
 Percentage\ of\ DFF's = 0.108429685 * 100 = 10.84296854\ \%
 ```
-
-# LAB-2
+---
+# #LAB-2
+---
 ## 1] Run 'picorv32a' design floorplan using OpenLANE flow.
 ### Steps for Implementation
 
@@ -106,8 +109,9 @@ Percentage\ of\ DFF's = 0.108429685 * 100 = 10.84296854\ \%
    >magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
    ![mag3](https://github.com/user-attachments/assets/e27c37aa-2d55-42ee-8118-46309890f41e)
 ![mag4](https://github.com/user-attachments/assets/3b0c30ff-fa79-4b95-9410-f75d6bf455c8)
-
-# LAB-3
+---
+# #LAB-3
+---
 ## 1] Clone custom inverter standard cell design from github repository
 
 1. #### Change directory to openlane
@@ -171,7 +175,19 @@ ext2spice
 
 4. #### Simulat & Download ngspice
 ![13](https://github.com/user-attachments/assets/1e226fe7-55c4-4cd7-b2ae-cef60f2eb9a2)
-![ngpsice1](https://github.com/user-attachments/assets/30f590ed-27ff-45e7-bb58-d018baadc907)
 ![ngspice2](https://github.com/user-attachments/assets/d68969b2-ba73-4fa4-b4fe-037200f62a24)
 
+5. #### Calculate Rise Time:
+  ##### Subtract the time at 10% from the time at 90% to get the rise time.
 
+            Rise Time = T80%−T20%
+            80 % of 3.3V is 2.64 
+            20 % of 3.3V is 0.66
+---
+
+![80%2 64command](https://github.com/user-attachments/assets/a2798e96-b320-4ff2-ac22-890aebf1efe9)
+. 80 Percent of 3.3V is 2.64
+![80%2 64](https://github.com/user-attachments/assets/ae4da3fb-4428-48bd-ac9b-dd2e25cd4f9a)
+. 20 Percent of 3.3V is 0.660
+![20%660](https://github.com/user-attachments/assets/aabe8117-a89c-4bce-8c81-1c50cb7280b1)
+. Rise Transition time = 6.16096 - 4.03964  = 2.12132ps
