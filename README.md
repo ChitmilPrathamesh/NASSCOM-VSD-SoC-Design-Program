@@ -545,7 +545,7 @@ after
 # #LAB-5
 ---
 
-Lab steps to build power distribution network
+## 1]Lab steps to build power distribution network
 ```blash
  	1. Go to openlane directory : cd Desktop/work/tools/openlane_working_dir/openlane
 	2. Type : Docker
@@ -566,14 +566,13 @@ Lab steps to build power distribution network
 
 ![pdf def](https://github.com/user-attachments/assets/8916cee8-11e2-446d-b5da-ab998b22985d)
 
-	Def file generated :
+## 2] Def file generated :
 ![deffilegeneratded](https://github.com/user-attachments/assets/51004449-0291-4d52-a8ce-8b658c293ce6)
-
-	pdn def in magic 
+## 3] pdn def in magic file:
 
 ![magic](https://github.com/user-attachments/assets/6031f0c0-78ee-4838-91ee-a629fdcb1b69)
 
-	running routing using - command - "run_routing"	
+## 4] Run routing using - command - "run_routing"	
  
 ![runrouting](https://github.com/user-attachments/assets/14b53fed-a947-4a22-9a9f-712f338ec7e1)
 
@@ -582,15 +581,15 @@ Lab steps to build power distribution network
 ![rouutinggg1](https://github.com/user-attachments/assets/bf173ce5-b4a2-470b-a8d1-170b323e82bf)
 
 
-Fast route guide file 
+## 5] Fast route guide file 
 
 ![guide](https://github.com/user-attachments/assets/6fac3c73-7aa9-4657-97bf-853214264d34)
 
-completion of routing
+## 6] Completion of routing done.
 
 ![fjinish](https://github.com/user-attachments/assets/6e02497f-a5eb-4279-8af4-0a856a3cf617)
 
-zero violations
+## 7] Violations is Zero
 
 ![Screenshot from 2024-09-14 21-58-19](https://github.com/user-attachments/assets/1dfa25cf-8187-4b88-a5f6-e2434498fc44)
 ---
