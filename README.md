@@ -545,7 +545,7 @@ after
 # #LAB-5
 ---
 
-## 1]Lab steps to build power distribution network
+## 1] Lab steps to build power distribution network
 ```blash
  	1. Go to openlane directory : cd Desktop/work/tools/openlane_working_dir/openlane
 	2. Type : Docker
