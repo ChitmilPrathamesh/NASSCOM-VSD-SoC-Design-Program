@@ -508,9 +508,8 @@ after
 ![12_set_propagated_clock](https://github.com/user-attachments/assets/c3474d38-40da-4614-a861-74e1dfe963f5)
 
 	11. report_checks -path_delay min_max -fields {slew trans net cap input_pins} -format full_clock_expanded -digits 4
-![13_report_checks_output](https://github.com/user-attachments/assets/fa5e5e2c-f55c-4b97-bff0-31b56757779c)
+        ![13_report_checks_output](https://github.com/user-attachments/assets/fa5e5e2c-f55c-4b97-bff0-31b56757779c)
 
- 	exit
 
 ## 4] removing 'sky130_fd_sc_hd__clkbuf_1' cell from clock buffer list variable 'CTS_CLK_BUFFER_LIST'
 
