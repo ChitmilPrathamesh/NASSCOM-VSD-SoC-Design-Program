@@ -220,7 +220,7 @@ ext2spice
    ![fall cell dealy calcylatin orignal ](https://github.com/user-attachments/assets/de343014-ee65-4e28-bcc7-c6889a0d4c09)
 
 ## 4] Steps to magic and Steps to load sky130 tech-rules
-   ```bash
+   
       1.  Go to home directory
       2.  download the lab files
               wget http://opencircuitdesign.com/open_pdks/archive/drc_tests.tgz
@@ -230,7 +230,7 @@ ext2spice
       5. to view .magicrc file
          command : gvim .magicrc
       6. Command to open magic tool in better graphics ->  magic -d XR &
-   ```
+   
 
    ![Screenshot 2024-09-16 225308](https://github.com/user-attachments/assets/7b702876-24d2-4bc3-bba4-0f6911757733)
    ![Screenshot 2024-09-16 225518](https://github.com/user-attachments/assets/8ff499e6-eb9f-4d6e-b4e7-735bbee86547)
@@ -239,15 +239,15 @@ ext2spice
 ![Screenshot 2024-09-16 225649](https://github.com/user-attachments/assets/390c0125-ec20-45af-acb4-709c3761530f)
 
 ## 5] To fix poly.9 and change it.
-       ```bash
+
             Poly resistor spacing to poly or spacing (no overlap) to diff/tap   0.480µm
             poly.9 rule no drc violation even though spacing < 0.48u
-        ```
+
 ![Screenshot 2024-09-16 225947](https://github.com/user-attachments/assets/626d9a34-97be-4ffc-9087-b7cd23e1317d)
 ![Screenshot 2024-09-16 230041](https://github.com/user-attachments/assets/6df9719c-8799-404f-8411-21e3c8c0817d)
 
 ## 6] Commands to run in tkcon window
-       ```bash
+       
        1. To Load updated tech file
         -> tech load sky130A.tech
 
@@ -257,76 +257,68 @@ ext2spice
         3. Selecting region displaying the new errors and getting the error messages 
         -> drc why
         
-        ```
+
 ![Screenshot 2024-09-16 230444](https://github.com/user-attachments/assets/6b7b0e84-1b07-4766-9d75-f648660994e4)
 
 ---
 # #LAB-4
-
-	1. Generate lef from the layout.
+---
+## 1] Generate lef from the layout.
  
- 1st Requuirement : The input and output ports of the standard cell should lie on the intersection of the vertical and horizontal tracks.
- tracks.info of sky130_fd_sc_hd
-
+ ### 1st Condition : The input and output ports of the standard cell should lie on the intersection of the vertical and horizontal tracks.
+1. tracks.info of sky130_fd_sc_hd
 ![sky_130A_track_info](https://github.com/user-attachments/assets/5115610c-e9c7-495f-b3b2-077c6baeedd4)
 
- tkcon window to set grid as tracks of locali layer
+2. tkcon window to set grid as tracks of locali layer
 ![grid_command_terminal](https://github.com/user-attachments/assets/fe126ea2-2f7c-4abf-a80f-6857a3687a9a)
 
-input and output ports of the standard cell should lie on the intersection of the vertical and horizontal tracks.
+3. input and output ports of the standard cell should lie on the intersection of the vertical and horizontal tracks.
 ![after_grid](https://github.com/user-attachments/assets/32f79c44-dab1-4e4c-819b-b8f4be85cb2f)
 
 
----
-
-2nd Requirement
-	width of the standard cell must be odd multiple of the xpitch or xdirection
+### 2nd Condition : width of the standard cell must be odd multiple of the xpitch or xdirection.
+Width of standard cell = 1.38 um = 0.46 ∗ 3 
 ![horizontal_width](https://github.com/user-attachments/assets/215b233b-c51b-4839-8bcd-a74ac8072ea2)
 
- W i d t h   o f   s t a n d a r d   c e l l = 1.38   u m = 0.46 ∗ 3 
 
----
-3rd Requriement 
-	Hight of the standard cell must be even multiple of the ydirection or ypitch
-
+### 3rd Condition : Hight of the standard cell must be even multiple of the ydirection or ypitch
+Height of standard  cell = 1.38 um = 0.46 ∗ 3 
 ![vertical_height](https://github.com/user-attachments/assets/f70e95a7-7c17-48a8-a4f0-55a26be88107)
 
-H I G H T   o f   s t a n d a r d   c e l l = 1.38   u m = 0.46 ∗ 3 
 
----
-Defining the Port 
+## 2] Defining the Port 
 ![A_locali](https://github.com/user-attachments/assets/2a38a90c-b100-4b09-8b61-f951e7e7ac34)
 ![y_locali](https://github.com/user-attachments/assets/c9b6dd3d-4105-4a11-935e-fd51c28e53ac)
 ![vPWR](https://github.com/user-attachments/assets/7f1f2a34-2a7c-4531-920b-ec20da9b309d)
 ![VGND](https://github.com/user-attachments/assets/44181246-dc51-4f5a-a4f0-118068f6b8ee)
 
-
-NEW Layout
+1. NEW Layout Created
 ![new_mag](https://github.com/user-attachments/assets/215484a3-ae96-455e-8bc7-2a390840e140)
 
-
- tkcon window to save the layout with custom name and new lef file
+ 2. tkcon window to save the layout with custom name and new lef file
  ![lef_write_with all](https://github.com/user-attachments/assets/0147b96b-a224-4b31-9e40-54cf6bdfa200)
----
 
-SKY_L3 - Introduction to timing libs and steps to include new cell in synthesis
+3. Introduction to timing libs and steps to include new cell in synthesis
+1) Copy the new lef file to
+> /Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/
+2) Copy lib files
+> "sky130_fd_sc_hd.lib" from vsdstdcelldesign/lib to /Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/
 
-	1. Copy the new lef file to  /Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/
-	2. Copy lib files "sky130_fd_sc_hd.lib" from vsdstdcelldesign/lib to /Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/
 
-Edit 'config.tcl' 
-
+4. #### Edit 'config.tcl' 
+```blash
   	set ::env(LIB_SYNTH) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__typical.lib"
 	set ::env(LIB_FASTEST) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__fast.lib"
 	set ::env(LIB_SLOWEST) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__slow.lib"
 	set ::env(LIB_TYPICAL) "$::env(OPENLANE_ROOT)/designs/picorv32a/src/sky130_fd_sc_hd__typical.lib"
 
 	set ::env(EXTRA_LEFS) [glob $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/src/*.lef]
- 
+ ```
+
  ![configedit](https://github.com/user-attachments/assets/79774496-72b2-45c5-a62d-adc537ff2ab5)
 
-openlane flow synthesis with newly inserted custom inverter cell.
-
+5. #### openlane flow synthesis with newly inserted custom inverter cell.
+```blash
 	steps
  	1. go to openlane directory : cd Desktop/work/tools/openlane_working_dir/openlane
   	2. docker
@@ -349,140 +341,141 @@ openlane flow synthesis with newly inserted custom inverter cell.
        		3. tap_decap_or
 	 16 run_placement
   	17 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
+```
 
 ![synth_overwrite](https://github.com/user-attachments/assets/f4f8f5be-b54d-4143-ab1f-0f3e036b5e02)
 
-	total negative slack =-711.59   and wrost negative slack = -23.89.
+1) total negative slack =-711.59   and wrost negative slack = -23.89.
 ![synthesis completed](https://github.com/user-attachments/assets/d8945cb4-4dc1-4024-848e-440913c13368)
 
- after this performed steps are from 5 to 14 
+ 2) after this performed steps are from 5 to 14 
  ![zero _negative slack](https://github.com/user-attachments/assets/45ff0442-cc79-43da-ac51-0054f022661c)
 
-Now we got TNS and WNS = 0
+3) Now we got TNS and WNS = 0
 
-Now we perform floorplan 
-	run_floorplan
+4) Now we perform floorplan 
+> run_floorplan
  ![run_floorplan](https://github.com/user-attachments/assets/211c24f8-2bf4-432d-8621-53b3a68b92df)
 ![error](https://github.com/user-attachments/assets/d0a4d661-c330-4897-9581-4db4c9b6dc65)
 
-after getting error run following commands
-
+5) after getting error run following commands
+```blash
 	1. init_floorplan
 	2. place_io
 	3. tap_decap_or
+```
 
 ![init_floorplan](https://github.com/user-attachments/assets/7dd207eb-cdc5-46f3-a72c-9aacd4550f01)
 ![tap_decap](https://github.com/user-attachments/assets/4197501d-032c-4f80-9959-ca21ae778ec5)
 
-Run_placement
+6) Run_placement
 ![run_placement](https://github.com/user-attachments/assets/d489e725-24d0-4a20-9004-3df4b07d8e27)
 ![run_placement_complete](https://github.com/user-attachments/assets/6a99138e-6762-4292-ba33-9fd9ec003943)
 
 
- load placement def in magic in other terminal
+ 7) load placement def in magic in other terminal
  
 ![magic](https://github.com/user-attachments/assets/3178192e-fe35-4ebb-8f9d-0b8fccb98432)
 
 ![vsdinv](https://github.com/user-attachments/assets/fcc38ff7-9a09-422c-82f2-38e9eb81becf)
 
----
-	 tkcon window to view internal layers of cells
+
+8) tkcon window to view internal layers of cells
 
 ![expand](https://github.com/user-attachments/assets/2b868a31-917a-4845-8b1b-0bf315050a50)
 
----
 
-New created pre_sta.conf for STA analysis in openlane directory
+
+9) New created pre_sta.conf for STA analysis in openlane directory
 
 ![pre_sta,conf](https://github.com/user-attachments/assets/65b23ef4-2caf-4d34-94ae-db122328daea)
 
-my_base.sdc for STA analysis in openlane/designs/picorv32a/src
+10) my_base.sdc for STA analysis in openlane/designs/picorv32a/src
 
 ![my_sdc](https://github.com/user-attachments/assets/836ce71a-0d5d-4b46-9c7f-1ad763a83963)
 
-output of pre_sta.conf is equal to synthesis stage
+11) output of pre_sta.conf is equal to synthesis stage
 
 ![openlaneoutput_negativeslace](https://github.com/user-attachments/assets/a0542931-4f42-44de-ac2a-9be371af96f0)
 
-Here vsdinverter gate  is driving 4 fanouts
+12) Here vsdinverter gate  is driving 4 fanouts
 
 ![or_gate_drive_strength_2_fanout_4](https://github.com/user-attachments/assets/ece2b905-229f-401a-9aa8-3002a3c075b8)
 
-command to optimize 
-
+13) command to optimize 
+```blash
 	1. report_net -connections _10566_
 	2. replace_cell _10566_ sky130_fd_sc_hd__or3_4
  	3. report_checks -fields {net cap slew input_pins} -digits 4
+```
 
-Befor optimizing
+14) Befor optimizing
 
 ![newslackviolated_23 90](https://github.com/user-attachments/assets/e101f3ee-5860-458d-ad39-a5e65dc7828a)
 
 
-After optimizing slack reduced
+15) After optimizing slack reduced
 ![newslack_afteroptimizing](https://github.com/user-attachments/assets/fecfb920-a039-418e-a4dc-6028c88dbee3)
 
-or gate
+16) or gate
 ![new_orgate_4fanout_before_optimize](https://github.com/user-attachments/assets/90ea3c92-022f-4ee1-89ce-ea5d98b00015)
 
 
 
-Commands to perform analysis and optimize timing by replacing with OR gate of drive strength 4
+6. #### Commands to perform analysis and optimize timing by replacing with OR gate of drive strength 4
 	
  	1. report_net -connections _11675_
 	2.replace_cell _14514_ sky130_fd_sc_hd__or3_4
 	3.report_checks -fields {net cap slew input_pins} -digits 4
-before total slack
+1) before total slack
 ![befor_11675_total slack](https://github.com/user-attachments/assets/5d2ad9c8-a017-4c5c-a515-dd4bbe8049ef)
 
-after optimizaiton 
+2) after optimizaiton 
 ![new_11675_delayreduced](https://github.com/user-attachments/assets/ec5f7127-ca64-4b40-aecb-6e10cbf5053f)
 
-or gate _11675_
+3) or gate _11675_
 before
 ![new_11675_before](https://github.com/user-attachments/assets/7ab9f400-3e64-4f64-abaa-0b39680c35ca)
 after
 ![new_11675_delayreduced](https://github.com/user-attachments/assets/84ecb9d5-3632-4271-9764-3bfe95ba152b)
 
-
-We started ECO fixes at wns -23.90 and now we stand at wns 23.1405we reduced around 0.7595ns of violation
----
+#### We started ECO fixes at wns -23.90 and now we stand at wns 23.1405we reduced around 0.7595ns of violation
 
 
-Replace the old netlist with the new netlist generated after timing ECO fix and implement the floorplan, placement and cts.
+
+7. #### Replace the old netlist with the new netlist generated after timing ECO fix and implement the floorplan, placement and cts.
 
 ![oldnetlist](https://github.com/user-attachments/assets/c9e9ede3-28fe-44e1-86e3-98a59c45bf0f)
 
-Commands to write verilog
-	
+1) Commands to write verilog
+	```blash
  	1.help write_verilog
   	2.write_verilog /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/09-09_05-51/results/synthesis/picorv32a.synthesis.v
 	3. exit
+        ``` 
  Screenshot of commands run
- 
  ![write_Verilog](https://github.com/user-attachments/assets/9f9c2873-c84e-48b5-a46b-0249bb7f248c)
 
- Verified that the netlist is overwritten by checking that instance _14675_
+ 2) Verified that the netlist is overwritten by checking that instance _14675_
 ![11675](https://github.com/user-attachments/assets/5a21f734-4cbe-4e59-9ba4-9558e56cb041)
 
----
 
-we confirmed that netlist is replaced and will be loaded in PnR  , since we want to go with  0 violation design we will continuing with the clean design .
+3) we confirmed that netlist is replaced and will be loaded in PnR  , since we want to go with  0 violation design we will continuing with the clean design .
 ![slackzero](https://github.com/user-attachments/assets/2175ef0a-6405-4fbf-809d-fc2205f46840)
 
-placement done 
+4) placement done 
 ![placementdone](https://github.com/user-attachments/assets/7690a971-24fd-4e06-86c9-ef97e8d4e4e3)
 
-running _ cts
+5) running _ cts
 ![run_Cts](https://github.com/user-attachments/assets/2f7731cf-a91c-43a0-8166-80d1e61327e9)
 
-generated cts file in "/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/09-09_05-51/results/synthesis" 
+6) generated cts file in "/home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/09-09_05-51/results/synthesis" 
 ![cts_generated](https://github.com/user-attachments/assets/23e30600-812b-40b2-b452-30db6ca739da)
 
----
-#_POST_CTS_
 
-commands performed 
+## 3] POST_CTS
+
+1) commands performed 
 	
  	1. openroad
 ![1_openroad](https://github.com/user-attachments/assets/f76680b5-dfda-406f-914f-d47d732d1066)
@@ -519,23 +512,25 @@ commands performed
 
  	exit
 
-#_removing 'sky130_fd_sc_hd__clkbuf_1' cell from clock buffer list variable 'CTS_CLK_BUFFER_LIST'_
+## 4] removing 'sky130_fd_sc_hd__clkbuf_1' cell from clock buffer list variable 'CTS_CLK_BUFFER_LIST'
 
-command for removing 
-	    
+1. command for removing    
      	1. echo $::env(CTS_CLK_BUFFER_LIST)
       	2. set ::env(CTS_CLK_BUFFER_LIST)  lreplace $::env(CTS_CLK_BUFFER_LIST) 0 0
 	3. echo $::env(CTS_CLK_BUFFER_LIST)
+        
  ![14_removed_clk_buf1](https://github.com/user-attachments/assets/6feed76b-c69e-40c2-9ee9-bb3f8b7b6eba)
 
- Before running cts :
- 
+ 2. Before running cts :
+        
  	1. echo $::env(CURRENT_DEF)
 	2. set ::env(CURRENT_DEF) /openLANE_flow/designs/picorv32a/runs/09-09_05-51/results/placement/picorv32a.placement.def
+        
+        
 ![run_cts_before_placement_Cts](https://github.com/user-attachments/assets/00ed93b6-35d3-47d7-ba49-8668a24b4f98)
 ![running_cts_afterplacement_def](https://github.com/user-attachments/assets/971ffd45-6d7d-484f-8136-c7df6581f039)
 
-completed running cts 
+3. completed running cts 
 ![completed run_cts_2ndtime](https://github.com/user-attachments/assets/cc108d71-e2b5-4be1-bef4-b4c2fe145fe8)
 ![read_def_2ndtime](https://github.com/user-attachments/assets/338fbfdf-2755-436d-8312-bbb96ef3acd5)
 
@@ -545,7 +540,6 @@ completed running cts
 ![slack timing](https://github.com/user-attachments/assets/58f6f87a-91ce-4fc9-8a31-fed9a0261f40)
 
 ![alldone](https://github.com/user-attachments/assets/df046b6e-4aea-444c-87b5-b8fd27e5c9a7)
-
 
 ---
 # #LAB-5
